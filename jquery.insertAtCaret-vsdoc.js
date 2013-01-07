@@ -11,7 +11,7 @@
   $.fn.insertAtCaret = function (text) {
     ///	<summary>
     ///		A jQuery plugin which inserts text to a text input or
-    ///   a textarea field.
+    ///   a textarea field at caret's position.
     ///	</summary>
     ///	<returns type="jQuery" />
     return this.each(function () {
