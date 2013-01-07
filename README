@@ -1,0 +1,14 @@
+jQuery insertAtCaret 1.0
+http://www.karalamalar.net/
+
+Copyright (c) 2013 İzzet Emre Erkan
+Licensed under Creative Commons Attribution-Share Alike 3.0 Unported License
+http://creativecommons.org/licenses/by-sa/3.0/
+
+--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
+
+A jQuery plugin which inserts text to a text input or a textarea field.
+
+Base code from: http://stackoverflow.com/a/1064139/84042
+
+--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--==--
