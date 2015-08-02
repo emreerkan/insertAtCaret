@@ -3,8 +3,7 @@
  * http://www.karalamalar.net/
  *
  * Copyright (c) 2013 İzzet Emre Erkan
- * Licensed under Creative Commons Attribution-Share Alike 3.0 Unported License
- * http://creativecommons.org/licenses/by-sa/3.0/
+ * Licensed under GPLv2 or later.
  *
  */
 (function ($, document, window, undefined) {
