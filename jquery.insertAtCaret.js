@@ -9,33 +9,33 @@
 (function ($, document, window, undefined) {
   $.fn.insertAtCaret = function (text) {
     return this.each(function () {
-      var input = this, scrollPos, strPos = 0, before, after, range;
+      var input = this, scrollPos, strPos = 0, before, after, range, isOldBrowser = ("selectionStart" in input && "selectionEnd" in input);
       if( !( ( input.tagName && input.tagName.toLowerCase() === "textarea") || ( input.tagName && input.tagName.toLowerCase() === "input" && input.type.toLowerCase() === "text" ) ) ) {
         return;
       }
       scrollPos = input.scrollTop;
       
-      if ($.browser.msie) {
+      if (isOldBrowser) {
+        strPos = input.selectionStart;
+      } else {
         input.focus();
         range = document.selection.createRange();
         range.moveStart('character', -input.value.length);
         strPos = range.text.length;
-      } else {
-        strPos = input.selectionStart;
       }
 
       before = (input.value).substring(0, strPos);
       after = (input.value).substring(strPos, input.value.length);
       input.value = before + text + after;
       strPos = strPos + text.length;
-      if ($.browser.msie) {
+      if (isOldBrowser) {
+        input.selectionStart = strPos;
+        input.selectionEnd = strPos;
+      } else {
         range = document.selection.createRange();
         range.moveStart('character', strPos);
         range.moveEnd('character', 0);
         range.select();
-      } else {
-        input.selectionStart = strPos;
-        input.selectionEnd = strPos;
       }
       input.scrollTop = scrollPos;
     });
