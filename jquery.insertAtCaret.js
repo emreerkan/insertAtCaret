@@ -9,9 +9,9 @@
 (function ($, document, window, undefined) {
   $.fn.insertAtCaret = function (text) {
     return this.each(function () {
-      var input = this, scrollPos, strPos = 0, before, after, range, isOldBrowser = ("selectionStart" in input && "selectionEnd" in input);
+      var input = this, scrollPos, strPos = 0, isOldBrowser = ("selectionStart" in input && "selectionEnd" in input), before, after, range;
 
-      if( !( ( input.tagName && input.tagName.toLowerCase() === "textarea") || ( input.tagName && input.tagName.toLowerCase() === "input" && input.type.toLowerCase() === "text" ) ) ) {
+      if(!((input.tagName && input.tagName.toLowerCase() === "textarea") || (input.tagName && input.tagName.toLowerCase() === "input" && input.type.toLowerCase() === "text"))) {
         return;
       }
 
@@ -26,14 +26,14 @@
         strPos = range.text.length;
       }
 
-      before = (input.value).substring(0, strPos);
-      after = (input.value).substring(strPos, input.value.length);
+      before      = (input.value).substring(0, strPos);
+      after       = (input.value).substring(strPos, input.value.length);
       input.value = before + text + after;
-      strPos = strPos + text.length;
+      strPos      = strPos + text.length;
 
       if (isOldBrowser) {
         input.selectionStart = strPos;
-        input.selectionEnd = strPos;
+        input.selectionEnd   = strPos;
       } else {
         range = document.selection.createRange();
         range.moveStart('character', strPos);
