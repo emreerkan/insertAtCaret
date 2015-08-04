@@ -10,11 +10,13 @@
   $.fn.insertAtCaret = function (text) {
     return this.each(function () {
       var input = this, scrollPos, strPos = 0, before, after, range, isOldBrowser = ("selectionStart" in input && "selectionEnd" in input);
+
       if( !( ( input.tagName && input.tagName.toLowerCase() === "textarea") || ( input.tagName && input.tagName.toLowerCase() === "input" && input.type.toLowerCase() === "text" ) ) ) {
         return;
       }
+
       scrollPos = input.scrollTop;
-      
+
       if (isOldBrowser) {
         strPos = input.selectionStart;
       } else {
@@ -28,6 +30,7 @@
       after = (input.value).substring(strPos, input.value.length);
       input.value = before + text + after;
       strPos = strPos + text.length;
+
       if (isOldBrowser) {
         input.selectionStart = strPos;
         input.selectionEnd = strPos;
@@ -37,6 +40,7 @@
         range.moveEnd('character', 0);
         range.select();
       }
+
       input.scrollTop = scrollPos;
     });
   };
