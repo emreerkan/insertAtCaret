@@ -1,9 +1,12 @@
 /*!
- * jQuery insertAtCaret 1.0
+ * jQuery insertAtCaret 1.1
  * http://www.karalamalar.net/
  *
  * Copyright (c) 2013 İzzet Emre Erkan
  * Licensed under GPLv2 or later.
+ *
+ * Contributors:
+ * [@kittsville](https://github.com/kittsville)
  *
  */
 (function ($, document, window, undefined) {
