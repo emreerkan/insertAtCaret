@@ -1,4 +1,4 @@
-# jQuery insertAtCaret 1.1
+# jQuery insertAtCaret 1.1.1
 
 A jQuery plugin which inserts text to a text input or a textarea field at the caret's position.
 
@@ -13,6 +13,10 @@ $('textarea').insertAtCaret('Bar');
 ```
 
 ## Changelog
+
+[1.1.1] - 2015-08-05
+
+* Added to [npm](https://www.npmjs.com/package/insert-at-caret) and jQuery Plugin Registry
 
 [1.1] - 2015-08-05
 
