@@ -1,5 +1,5 @@
 /*!
- * jQuery insertAtCaret 1.1.1
+ * jQuery insertAtCaret 1.1.2
  * http://www.karalamalar.net/
  *
  * Copyright (c) 2013 İzzet Emre Erkan
