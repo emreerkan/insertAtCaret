@@ -1,9 +1,10 @@
 /*!
- * jQuery insertAtCaret 1.1.2
+ * jQuery insertAtCaret 1.1.3
  * http://www.karalamalar.net/
  *
  * Copyright (c) 2013 İzzet Emre Erkan
  * Licensed under GPLv2 or later.
+ * http://www.gnu.org/licenses/gpl-2.0.txt
  *
  * Contributors:
  * [@kittsville](https://github.com/kittsville)
@@ -11,6 +12,11 @@
  */
 (function ($, document, window, undefined) {
   $.fn.insertAtCaret = function (text) {
+    ///	<summary>
+    ///		A jQuery plugin which inserts text to a text input or
+    ///   a textarea field at caret's position.
+    ///	</summary>
+    ///	<returns type="jQuery" />
     return this.each(function () {
       var input = this, scrollPos, strPos = 0, isOldBrowser = ("selectionStart" in input && "selectionEnd" in input), before, after, range;
 
