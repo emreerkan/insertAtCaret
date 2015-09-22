@@ -14,6 +14,10 @@ $('textarea').insertAtCaret('Bar');
 
 ## Changelog
 
+[1.1.4] - 2015-09-22
+
+* Corrected the name of the browser detection variable
+
 [1.1.3] - 2015-08-08
 
 * Changed naming of the core files.
