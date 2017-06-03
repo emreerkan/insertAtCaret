@@ -11,41 +11,45 @@
  *
  */
 (function ($, document, window, undefined) {
-  $.fn.insertAtCaret = function (text) {
-    return this.each(function () {
-      var input = this, scrollPos, strPos = 0, isModernBrowser = ("selectionStart" in input && "selectionEnd" in input), before, after, range;
+    $.fn.insertAtCaret = function (text) {
+        return this.each(function () {
+            var input = this, scrollPos, strPosStart = 0, strPosEnd = 0, isModernBrowser = ("selectionStart" in input && "selectionEnd" in input), before, after, range, selection;
 
-      if(!((input.tagName && input.tagName.toLowerCase() === "textarea") || (input.tagName && input.tagName.toLowerCase() === "input" && input.type.toLowerCase() === "text"))) {
-        return;
-      }
+            if (!((input.tagName && input.tagName.toLowerCase() === "textarea") || (input.tagName && input.tagName.toLowerCase() === "input" && input.type.toLowerCase() === "text"))) {
+                return;
+            }
 
-      scrollPos = input.scrollTop;
+            scrollPos = input.scrollTop;
 
-      if (isModernBrowser) {
-        strPos = input.selectionStart;
-      } else {
-        input.focus();
-        range = document.selection.createRange();
-        range.moveStart('character', -input.value.length);
-        strPos = range.text.length;
-      }
+            if (isModernBrowser) {
+                strPosStart = input.selectionStart;
+                strPosEnd = input.selectionEnd;
+            } else {
+                input.focus();
+                range = document.selection.createRange();
+                range.moveStart('character', -input.value.length);
+                strPosStart = range.text.length;
+            }
 
-      before      = (input.value).substring(0, strPos);
-      after       = (input.value).substring(strPos, input.value.length);
-      input.value = before + text + after;
-      strPos      = strPos + text.length;
+            if (strPosEnd < strPosStart)
+                strPosEnd = strPosStart;
 
-      if (isModernBrowser) {
-        input.selectionStart = strPos;
-        input.selectionEnd   = strPos;
-      } else {
-        range = document.selection.createRange();
-        range.moveStart('character', strPos);
-        range.moveEnd('character', 0);
-        range.select();
-      }
+            before = (input.value).substring(0, strPosStart);
+            after = (input.value).substring(strPosEnd, input.value.length);
+            input.value = before + text + after;
+            strPosStart = strPosStart + text.length;
 
-      input.scrollTop = scrollPos;
-    });
-  };
+            if (isModernBrowser) {
+                input.selectionStart = strPosStart;
+                input.selectionEnd = strPosStart;
+            } else {
+                range = document.selection.createRange();
+                range.moveStart('character', strPosStart);
+                range.moveEnd('character', 0);
+                range.select();
+            }
+
+            input.scrollTop = scrollPos;
+        });
+    };
 })(jQuery, document, window);
