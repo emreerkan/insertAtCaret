@@ -14,6 +14,10 @@ $('textarea').insertAtCaret('Bar');
 
 ## Changelog
 
+[1.1.5] - 2017-06-05
+
+* If any text is selected, plugin overrides that selected part of the text with new text
+
 [1.1.4] - 2015-09-22
 
 * Corrected the name of the browser detection variable
@@ -49,3 +53,4 @@ Licensed under GPLv2 or later.
 Contributors:
 
 - [@kittsville](https://github.com/kittsville)
+- [@Nils-Berghs](https://github.com/Nils-Berghs)
