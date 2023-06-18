@@ -1,8 +1,8 @@
 /*!
- * jQuery insertAtCaret 1.1.5
+ * jQuery insertAtCaret 1.2.0
  * http://www.karalamalar.net/
  *
- * Copyright (c) 2013 İzzet Emre Erkan
+ * Copyright (c) 2023 Emre Erkan
  * Licensed under GPLv2 or later.
  * http://www.gnu.org/licenses/gpl-2.0.txt
  *
@@ -17,23 +17,33 @@
             var input = this, scrollPos, strPosStart = 0, strPosEnd = 0, isModernBrowser = ("selectionStart" in input && "selectionEnd" in input), before, after, range, selection;
 
             if (!((input.tagName && input.tagName.toLowerCase() === "textarea") || (input.tagName && input.tagName.toLowerCase() === "input" && input.type.toLowerCase() === "text"))) {
+                if (input.contentEditable) {
+                    selection = document.getSelection();
+                    if (selection.getRangeAt && selection.rangeCount) {
+                        range = selection.getRangeAt(0);
+                        range.deleteContents();
+                        range.insertNode(document.createTextNode(text));
+                        selection.collapseToEnd();
+                    }
+                }
                 return;
             }
 
             scrollPos = input.scrollTop;
+            input.focus();
 
             if (isModernBrowser) {
                 strPosStart = input.selectionStart;
                 strPosEnd = input.selectionEnd;
             } else {
-                input.focus();
-                range = document.selection.createRange();
+                range = input.createTextRange();
                 range.moveStart('character', -input.value.length);
                 strPosStart = range.text.length;
             }
 
-            if (strPosEnd < strPosStart)
+            if (strPosEnd < strPosStart) {
                 strPosEnd = strPosStart;
+            }
 
             before = (input.value).substring(0, strPosStart);
             after = (input.value).substring(strPosEnd, input.value.length);
@@ -41,16 +51,15 @@
             strPosStart = strPosStart + text.length;
 
             if (isModernBrowser) {
-                input.selectionStart = strPosStart;
-                input.selectionEnd = strPosStart;
+                input.setSelectionRange(strPosStart, strPosStart);
             } else {
-                range = document.selection.createRange();
-                range.moveStart('character', strPosStart);
-                range.moveEnd('character', 0);
+                range = input.createTextRange();
+                range.move('character', strPosStart);
                 range.select();
             }
 
             input.scrollTop = scrollPos;
+            input.blur();
         });
     };
 })(jQuery, document, window);

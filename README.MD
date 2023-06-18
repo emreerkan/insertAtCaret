@@ -1,18 +1,24 @@
 # jQuery insertAtCaret
 
-A jQuery plugin which inserts text to a text input or a textarea field at the caret's position.
+A jQuery plugin which inserts text to a text input, a textarea or a tag with 
+`contenteditable="true"` at the caret's position.
 
 Base code from: http://stackoverflow.com/a/1064139/84042
 
 ## Usage
 
-If your text field contained 'Foo Bar' with the cursor positioned after 'Foo' then the following code would result in 'FooBar Bar':
+If your text field contains 'Foo Bar' with the cursor positioned after 'Foo' 
+then the following code would result in 'FooBar Bar':
 
 ```
 $('textarea').insertAtCaret('Bar');
 ```
 
 ## Changelog
+
+[1.2.0] - 2023-06-18
+
+* Now it supports elements with `contenteditable="true"`
 
 [1.1.5] - 2017-06-05
 
@@ -47,7 +53,7 @@ $('textarea').insertAtCaret('Bar');
 
 ## License
 
-Copyright (c) 2013 [İzzet Emre Erkan](http://www.karalamalar.net/)  
+Copyright (c) 2023 [Emre Erkan](http://www.karalamalar.net/)  
 Licensed under GPLv2 or later.
 
 Contributors:
