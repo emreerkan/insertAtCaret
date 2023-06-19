@@ -1,5 +1,5 @@
 /*!
- * jQuery insertAtCaret 1.2.1
+ * jQuery insertAtCaret 1.2.2
  * http://www.karalamalar.net/
  *
  * Copyright (c) 2023 Emre Erkan

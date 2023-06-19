@@ -16,6 +16,10 @@ $('textarea').insertAtCaret('Bar');
 
 ## Changelog
 
+[1.2.2] - 2023-06-19
+
+* Chore: Updates jQuery dependency. Now it requires at least 3.5.0 version.
+
 [1.2.1] - 2023-06-19
 
 * Fix: If the contentEditable element does not have focus it was adding the text

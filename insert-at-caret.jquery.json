@@ -6,7 +6,7 @@
         "text",
         "input"
     ],
-    "version": "1.2.1",
+    "version": "1.2.2",
     "author": {
         "name": "Emre Erkan",
         "url": "http://www.karalamalar.net"
@@ -29,6 +29,6 @@
     "docs": "https://github.com/karalamalar/insertAtCaret/wiki",
     "download": "https://github.com/karalamalar/insertAtCaret/archive/master.zip",
     "dependencies": {
-        "jquery": ">=1.5"
+        "jquery": ">=3.5.0"
     }
 }
