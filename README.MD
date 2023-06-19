@@ -16,6 +16,11 @@ $('textarea').insertAtCaret('Bar');
 
 ## Changelog
 
+[1.2.1] - 2023-06-18
+
+* Fix: If the contentEditable element does not have focus it was adding the text
+  to the active element. `.focus()` added to prevent that.
+
 [1.2.0] - 2023-06-18
 
 * Now it supports elements with `contenteditable="true"`

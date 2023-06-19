@@ -1,5 +1,5 @@
 /*!
- * jQuery insertAtCaret 1.2.0
+ * jQuery insertAtCaret 1.2.1
  * http://www.karalamalar.net/
  *
  * Copyright (c) 2023 Emre Erkan
@@ -18,6 +18,7 @@
 
             if (!((input.tagName && input.tagName.toLowerCase() === "textarea") || (input.tagName && input.tagName.toLowerCase() === "input" && input.type.toLowerCase() === "text"))) {
                 if (input.contentEditable) {
+                    input.focus();
                     selection = document.getSelection();
                     if (selection.getRangeAt && selection.rangeCount) {
                         range = selection.getRangeAt(0);

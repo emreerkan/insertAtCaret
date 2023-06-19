@@ -1,6 +1,6 @@
 {
   "name": "insert-at-caret",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A jQuery plugin which inserts text to a text input or a textarea field at the caret's position.",
   "main": "jquery.insert-at-caret.js",
   "scripts": {
