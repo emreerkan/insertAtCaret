@@ -16,7 +16,7 @@ $('textarea').insertAtCaret('Bar');
 
 ## Changelog
 
-[1.2.1] - 2023-06-18
+[1.2.1] - 2023-06-19
 
 * Fix: If the contentEditable element does not have focus it was adding the text
   to the active element. `.focus()` added to prevent that.
