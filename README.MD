@@ -16,6 +16,10 @@ $('textarea').insertAtCaret('Bar');
 
 ## Changelog
 
+[1.2.3] - 2023-08-23
+
+* Chore: Repository URL updated
+
 [1.2.2] - 2023-06-19
 
 * Chore: Updates jQuery dependency. Now it requires at least 3.5.0 version.

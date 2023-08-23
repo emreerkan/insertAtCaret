@@ -1,6 +1,6 @@
 {
   "name": "insert-at-caret",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A jQuery plugin which inserts text to a text input or a textarea field at the caret's position.",
   "main": "jquery.insert-at-caret.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/karalamalar/insertAtCaret.git"
+    "url": "git+https://github.com/emreerkan/insertAtCaret.git"
   },
   "keywords": [
     "jquery-plugin",
@@ -26,7 +26,7 @@
   ],
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/karalamalar/insertAtCaret/issues"
+    "url": "https://github.com/emreerkan/insertAtCaret/issues"
   },
-  "homepage": "https://github.com/karalamalar/insertAtCaret#readme"
+  "homepage": "https://github.com/emreerkan/insertAtCaret#readme"
 }

@@ -6,7 +6,7 @@
         "text",
         "input"
     ],
-    "version": "1.2.2",
+    "version": "1.2.3",
     "author": {
         "name": "Emre Erkan",
         "url": "http://www.karalamalar.net"
@@ -24,10 +24,10 @@
             "url": "http://www.gnu.org/licenses/gpl-2.0.txt"
         }
     ],
-    "bugs": "https://github.com/karalamalar/insertAtCaret/issues",
-    "homepage": "https://github.com/karalamalar/insertAtCaret",
-    "docs": "https://github.com/karalamalar/insertAtCaret/wiki",
-    "download": "https://github.com/karalamalar/insertAtCaret/archive/master.zip",
+    "bugs": "https://github.com/emreerkan/insertAtCaret/issues",
+    "homepage": "https://github.com/emreerkan/insertAtCaret",
+    "docs": "https://github.com/emreerkan/insertAtCaret/wiki",
+    "download": "https://github.com/emreerkan/insertAtCaret/archive/master.zip",
     "dependencies": {
         "jquery": ">=3.5.0"
     }
