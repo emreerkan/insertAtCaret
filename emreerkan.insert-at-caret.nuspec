@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>karalamalar.insert-at-caret</id>
+    <id>emreerkan.insert-at-caret</id>
     <version>1.2.3</version>
     <title>jQuery insertAtCaret</title>
     <authors>Emre Erkan</authors>
     <owners>Emre Erkan</owners>
     <license type="expression">GPL-2.0-or-later</license>
-    <readme>content/README.md</readme>
+    <readme>content/README.MD</readme>
     <projectUrl>https://github.com/emreerkan/insertAtCaret</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A jQuery plugin which inserts text to a text input or a textarea field at the caret's position.
